@@ -15,16 +15,9 @@ Jump to:
   * [Flow](#flow)
 - [Git flow](#git-flow)
   * [Commit message](#commit-message)
-  * [Contributing flow](#contributing-flow)
-  * [Preparing a good PR](#preparing-a-good-pr)
+  * [Contributing git instruction](#contributing-git-instruction)
+- [Preparing a good PR](#preparing-a-good-pr)
 - [Code of conduct](#code-of-conduct)
-  * [Our Pledge](#our-pledge)
-  * [Our Standards](#our-standards)
-  * [Our Responsibilities](#our-responsibilities)
-  * [Scope](#scope)
-  * [Enforcement](#enforcement)
-  * [Attribution](#Attribution)
-
 
 ## Usage/Develop
 Install dependecies:
@@ -141,8 +134,9 @@ To make the git flow experience smoother you can use **custom git commands**(reg
 [Setup](https://github.com/petervanderdoes/gitflow-avh#initialization) a git repository
 for **git-flow** usage(store **git-flow** config in .git/config):
 ```sh
-git flow init -d
+git flow init
 ```
+Use all init settings as default, except tag prefix, it must be 'v'.
 
 ### Commit message
 We use [conventional commits specification](https://conventionalcommits.org/) for commit messages.
@@ -179,7 +173,7 @@ Read **[How to Write a Git Commit Message](https://chris.beams.io/posts/git-comm
 git commit --amend
 ```
 
-### Contributing flow
+### Contributing git instruction
 When contributing to this repository, please first discuss the change you wish to make via issue,
 email, or any other method with the owners of this repository before making a change.
 
@@ -198,7 +192,7 @@ git checkout -b feature/<feature> develop
 # git-flow:
 git flow feature start <feature>
 ```
-If your feature/bug/whatever have an **github issue** then use issue id as feature name.
+If your feature/bug/whatever have an **github issue** then use issue id as a feature name.
 For instance:
 ```sh
 git checkout -b feature/1 develop
@@ -231,7 +225,7 @@ Same with **git-flow**:
 git flow feature finish
 ```
 
-### Preparing a good PR
+## Preparing a good PR
 - A pull request should have a specific goal and have a descriptive title.
 Do not put multiple unrelated changes in a single pull request
 - Do not include any changes that are irrelevant to the goal of the pull request.
