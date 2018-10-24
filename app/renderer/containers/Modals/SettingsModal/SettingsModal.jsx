@@ -105,6 +105,7 @@ const SettingsModal: StatelessFunctionalComponent<Props> = ({
           >
             General
           </SettingsSectionLabel>
+          {/*
           <SettingsSectionLabel
             active={tab === 'Notifications'}
             onClick={() => {
@@ -113,6 +114,7 @@ const SettingsModal: StatelessFunctionalComponent<Props> = ({
           >
             Notifications
           </SettingsSectionLabel>
+          */}
           <SettingsSectionLabel
             active={tab === 'Updates'}
             onClick={() => {

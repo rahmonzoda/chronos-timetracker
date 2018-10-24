@@ -80,7 +80,6 @@ class IssueComments extends Component<Props, State> {
       selectedIssueId,
       dispatch,
     }: Props = this.props;
-    console.log(comments);
     return (
       <ActivitySection>
         <Flex column>
