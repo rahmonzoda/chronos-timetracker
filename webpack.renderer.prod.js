@@ -53,16 +53,16 @@ const plugins = [
 ];
 
 
-if (process.env.UPLOAD_SENTRY !== '0' && process.env.DISABLE_SENTRY !== '1') {
-  plugins.push(
-    new SentryPlugin({
-      organisation: 'webpal',
-      project: 'chronos-desktop',
-      apiKey: process.env.SENTRY_API_KEY,
-      release: `${pjson.version}_${process.platform}`,
-    }),
-  );
-}
+// if (process.env.UPLOAD_SENTRY !== '0' && process.env.DISABLE_SENTRY !== '1') {
+//   plugins.push(
+//     new SentryPlugin({
+//       organisation: 'webpal',
+//       project: 'chronos-desktop',
+//       apiKey: process.env.SENTRY_API_KEY,
+//       release: `${pjson.version}_${process.platform}`,
+//     }),
+//   );
+// }
 module.exports = env => merge(config(env), {
   mode: 'production',
   devtool: 'source-map',

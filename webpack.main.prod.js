@@ -89,6 +89,22 @@ module.exports = () => ({
           },
         },
       },
+      {
+        test: /\.node$/,
+        loader: 'node-loader',
+      },
+      // Common Image Formats
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|eot|webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
 

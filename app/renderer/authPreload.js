@@ -27,7 +27,7 @@ function back() {
 function initAtlassian(base) {
   base.style.width = '100%';
   base.style.height = '100%';
-  base.style.overflow = 'hidden';
+  // base.style.overflow = 'hidden';
 
   hideNode('header', base);
   hideNode('footer', base);

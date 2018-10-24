@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import EditFilledIcon from '@atlaskit/icon/glyph/edit-filled';
-import { stop, stopHover } from 'utils/data/svg';
+import {
+  stop, stopHover,
+} from 'utils/data/svg';
 
 // background: #32A675 !important;
 // background: #172B4D !important;

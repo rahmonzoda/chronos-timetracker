@@ -1,11 +1,13 @@
-import path from'path';
-import webpack from'webpack';
-import merge from'webpack-merge';
-import { spawn } from'child_process';
-import HtmlWebpackPlugin from'html-webpack-plugin';
+import path from 'path';
+import webpack from 'webpack';
+import merge from 'webpack-merge';
+import {
+  spawn,
+} from 'child_process';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WriteFilePlugin from 'write-file-webpack-plugin';
 
-import config from'./webpack.renderer.base';
+import config from './webpack.renderer.base';
 
 
 module.exports = env => merge(config(env), {

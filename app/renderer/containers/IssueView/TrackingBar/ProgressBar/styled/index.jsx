@@ -9,7 +9,7 @@ export const ProgressBarContainer = styled(Flex).attrs({
 })`
   position: absolute;
   right: 20px;
-  bottom: 6px
+  bottom: 6px;
   cursor: pointer;
 `;
 

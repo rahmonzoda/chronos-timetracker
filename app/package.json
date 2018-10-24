@@ -3,7 +3,7 @@
   "productName": "Chronos",
   "version": "2.7.1",
   "description": "Native app for time-tracking fully integrated with JIRA",
-  "main": "./main.prod.js",
+  "main": "./dist/main.prod.js",
   "author": {
     "name": "Webpal",
     "url": "https://github.com/web-pal"
