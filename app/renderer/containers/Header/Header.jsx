@@ -101,46 +101,41 @@ const Header: StatelessFunctionalComponent<Props> = ({
         <ProfileName>
           {userData.displayName}
         </ProfileName>
-        <FeatureHighlight
-          id="multiAccounts"
-          description="You can switch between your accounts here."
+        <DropdownMenu
+          triggerType="default"
+          position="right top"
+          trigger={
+            <ProfileTeam>
+              {host} <ChevronDownIcon />
+            </ProfileTeam>
+          }
         >
-          <DropdownMenu
-            triggerType="default"
-            position="right top"
-            trigger={
-              <ProfileTeam>
-                {host} <ChevronDownIcon />
-              </ProfileTeam>
-            }
+          {accounts.map((ac) => {
+            const acHost = transformValidHost(ac.origin);
+            const isActive = acHost.host === host &&
+              (ac.name === userData.emailAddress ||
+                ac.name === userData.key ||
+                ac.name === userData.name);
+            return (
+              <DropdownItem
+                key={`${ac.origin}:${ac.name}`}
+                onClick={() => dispatch(authActions.switchAccount(ac))}
+                isDisabled={isActive}
+                elemAfter={isActive && <Lozenge appearance="success">Active</Lozenge>}
+              >
+                <Tag text={acHost.hostname} color="teal" />
+                {ac.name}
+              </DropdownItem>
+            );
+          })}
+          <DropdownItem
+            onClick={() => dispatch(authActions.logoutRequest({ dontForget: true }))}
           >
-            {accounts.map((ac) => {
-              const acHost = transformValidHost(ac.origin);
-              const isActive = acHost.host === host &&
-                (ac.name === userData.emailAddress ||
-                  ac.name === userData.key ||
-                  ac.name === userData.name);
-              return (
-                <DropdownItem
-                  key={`${ac.origin}:${ac.name}`}
-                  onClick={() => dispatch(authActions.switchAccount(ac))}
-                  isDisabled={isActive}
-                  elemAfter={isActive && <Lozenge appearance="success">Active</Lozenge>}
-                >
-                  <Tag text={acHost.hostname} color="teal" />
-                  {ac.name}
-                </DropdownItem>
-              );
-            })}
-            <DropdownItem
-              onClick={() => dispatch(authActions.logoutRequest({ dontForget: true }))}
-            >
-              <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <EditorAddIcon /> Add account
-              </span>
-            </DropdownItem>
-          </DropdownMenu>
-        </FeatureHighlight>
+            <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+              <EditorAddIcon /> Add account
+            </span>
+          </DropdownItem>
+        </DropdownMenu>
       </ProfileInfo>
     </ProfileContainer>
 
