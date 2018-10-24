@@ -244,10 +244,6 @@ export function* initializeApp(): Generator<*, *, *> {
       const host = yield call(transformValidHost, appData.origin);
       const { hostname, protocol } = host;
 
-      let accounts = yield call(getFromStorage, 'accounts');
-      if (!accounts) accounts = [];
-      yield put(uiActions.setUiState('accounts', accounts));
-
       yield call(jira.auth, {
         host,
         token: appData.token,

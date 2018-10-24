@@ -1,5 +1,7 @@
 // @flow
-import React, { Component } from 'react';
+import React, {
+  Component,
+} from 'react';
 import {
   Field,
 } from 'redux-form';
@@ -50,6 +52,7 @@ class TeamStep extends Component<Props> {
       }, 500);
     }
   }
+
   hostInput: any;
 
   render() {
@@ -97,10 +100,12 @@ class TeamStep extends Component<Props> {
         <PrimaryButton onClick={onContinue}>
           Continue
         </PrimaryButton>
-        {accounts.length > 0 &&
+        {accounts.length > 0
+          && (
           <DefaultButton onClick={() => dispatch(uiActions.setUiState('authFormStep', 0))}>
             Login to existing account
           </DefaultButton>
+          )
         }
       </ContentInner>
     );

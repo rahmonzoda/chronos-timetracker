@@ -80,6 +80,7 @@ const AuthForm: StatelessFunctionalComponent<Props> = ({
       <LoginInfo>
         Log in to your account
       </LoginInfo>
+      {console.log(accounts)}
       <ContentOuter>
         {accounts.length > 0
           && (

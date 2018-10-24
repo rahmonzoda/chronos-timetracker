@@ -36,7 +36,7 @@ module.exports = () => ({
      */
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-      'process.env.DEBUG_PROD': JSON.stringify(process.env.DEBUG_PROD || 'false'),
+      'process.env.DEBUG_PROD': JSON.stringify(process.env.DEBUG_PROD || 'true'),
       'process.env.SENTRY_API_KEY': JSON.stringify(process.env.SENTRY_API_KEY || ''),
       'process.env.SENTRY_LINK': JSON.stringify(process.env.SENTRY_LINK || ''),
       'process.env.MIXPANEL_API_TOKEN': JSON.stringify(process.env.MIXPANEL_API_TOKEN || ''),

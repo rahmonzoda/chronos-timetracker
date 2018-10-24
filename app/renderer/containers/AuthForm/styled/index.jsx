@@ -200,6 +200,7 @@ export const ContentStep = styled(Flex).attrs({
 
 export const Account = styled.div`
   display: flex;
+  align-items: center;
   padding: 16px;
   cursor: pointer;
   border-radius: 5px;

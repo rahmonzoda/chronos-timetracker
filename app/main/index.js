@@ -202,7 +202,7 @@ function createWindow(callback) {
       ...lastWindowSize,
       ...noFrameOption,
     });
-    callback();
+    if (callback) callback();
 
     const url = (
       process.env.NODE_ENV === 'development'
@@ -239,6 +239,7 @@ function createWindow(callback) {
           checkRunning(e);
           if (shouldQuit) {
             issueWindow.destroy();
+            issueWindow = null;
           }
         }
       }
