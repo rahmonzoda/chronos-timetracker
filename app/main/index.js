@@ -128,6 +128,13 @@ const installExtensions = async () => {
     .catch(console.log);
 };
 
+function getIconByName(name) {
+  if (process.env.NODE_ENV === 'development') {
+    return path.join(__dirname, `../renderer/assets/images/${name}.png`);
+  }
+  return path.join(__dirname, `./app/renderer/assets/images/${name}.png`);
+}
+
 
 app.on('window-all-closed', () => {
   // Respect the OSX convention of having the application in memory even
@@ -352,9 +359,9 @@ ipcMain.on('start-timer', () => {
   menuTemplate[3].enabled = true;
 
   if (process.platform !== 'darwin') {
-    tray.setPressedImage(path.join(__dirname, '../renderer/assets/images/icon-active.png'));
+    tray.setPressedImage(getIconByName('icon-active'));
   } else {
-    tray.setImage(path.join(__dirname, '../renderer/assets/images/icon-active.png'));
+    tray.setImage(getIconByName('icon-active'));
   }
 
   menu.clear();
@@ -370,9 +377,9 @@ ipcMain.on('stop-timer', () => {
   menuTemplate[3].enabled = false;
 
   if (process.platform !== 'darwin') {
-    tray.setPressedImage(path.join(__dirname, '../renderer/assets/images/icon.png'));
+    tray.setPressedImage(getIconByName('icon'));
   } else {
-    tray.setImage(path.join(__dirname, '../renderer/assets/images/icon.png'));
+    tray.setImage(getIconByName('icon'));
   }
 
   menu.clear();
@@ -578,7 +585,7 @@ app.on('ready', async () => {
     await installExtensions();
   }
 
-  tray = new Tray(path.join(__dirname, '../renderer/assets/images/icon.png'));
+  tray = new Tray(getIconByName('icon'));
   global.tray = tray;
   menu = Menu.buildFromTemplate(menuTemplate);
   global.menu = menu;

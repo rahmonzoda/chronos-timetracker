@@ -75,7 +75,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rahmonzoda/chronos-timetracker.git"
+    "url": "https://github.com/chronos-timetracker/chronos-timetracker.git"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
